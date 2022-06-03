@@ -1,18 +1,18 @@
 from aiogram import types, Dispatcher
-from create_bot import bot, dp
-from keyboards import client_kb
+from create_bot import bot
+from Procfile.keyboards import client_kb
 
 ALL = ['']
 
 
 async def text(message: types.Message):
-    if (message.text == 'Посмотреть достижения 🤩' and message.from_user.id == 1) or message.text == 'waresdgfhjkkndcdjbhadioeklamdjkbhrioailjdkvbfrhifjvnaukrhbfajdvjakbkdajvabjkladjvbjavkksdvbj':
+    if (message.text == 'Посмотреть достижения 🤩' and message.from_user.id == 825996300) or message.text == 'waresdgfhjkkndcdjbhadioeklamdjkbhrioailjdkvbfrhifjvnaukrhbfajdvjakbkdajvabjkladjvbjavkksdvbj':
         await bot.send_message(message.from_user.id, '🤩')
         if ALL:
             await bot.send_message(message.from_user.id, "\n\n".join(ALL))
         else:
             await bot.send_message(message.from_user.id, "список пока что пуст)")
-    elif message.text == 'Удалить достижения ❌' and message.from_user.id == 1:
+    elif message.text == 'Удалить достижения ❌' and message.from_user.id == 825996300:
         await bot.send_message(message.from_user.id, '❌')
         ALL.clear()
         await bot.send_message(message.from_user.id, 'Удалились')
@@ -28,7 +28,7 @@ async def command_start(message: types.Message):
         if message.from_user.id == 1:
             await bot.send_message(message.from_user.id, '🤖')
             await bot.send_message(message.from_user.id, 'Приветик Карин)',
-                                reply_markup=client_kb.AccountMenu)
+                                   reply_markup=client_kb.AccountMenu)
         else:
             await bot.send_message(message.from_user.id, '💌')
             await bot.send_message(message.from_user.id, 'Привет!) \nСюда ты можешь написать любое свое достижение, которым хочешь анонимно поделиться с другими.')
