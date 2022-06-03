@@ -1,6 +1,6 @@
 from aiogram.utils import executor
 from create_bot import dp
-from Procfile.handlers import client
+from handlers import client
 
 
 async def on_startup(_):
